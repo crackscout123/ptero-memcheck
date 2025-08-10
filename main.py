@@ -31,6 +31,7 @@ def execute_scheduler():
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Fehler beim Ausführen des Schedulers: Status {resp.status_code}, Antwort: {resp.text}")
 
 def main():
+    print("done.") # pterodactyls generic python env checks for this when running a script in the panel.
     while True:
         try:
             ram_usage = get_server_resources()
