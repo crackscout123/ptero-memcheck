@@ -61,7 +61,7 @@ Das Skript:
 
 ## 🛠 Anpassungen
 
-- **Prüfintervall**: Ändere den `time.sleep(300)`-Wert in Sekunden (`300 = 5 Minuten`) nach Bedarf.
+- **Prüfintervall**: Ändere den `time.sleep(60*5)`-Wert in Sekunden (`60*5 = 5 Minuten`) nach Bedarf.
 - **RAM Limit**: Über den Wert `RAM_LIMIT_MB` im Skript einstellbar.
 
 
