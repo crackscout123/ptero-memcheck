@@ -37,10 +37,10 @@ pip install requests
 
 ```python
 PANEL_URL = "https://your-panel.com"      # Your panel URL
-API_KEY = "YOUR_API_KEY"                 # Your API key
+API_KEY = "YOUR_API_KEY"                  # Your API key
 SERVER_ID = "your-server-id"              # Server ID
 SCHEDULE_ID = "your-scheduler-id"         # Scheduler ID
-RAM_LIMIT_MB = 20480-(1024*1)              # Memory limit in MB
+RAM_LIMIT_MB = 20480-(1024*1)             # Memory limit in MB
 ```
 
 
@@ -49,7 +49,7 @@ RAM_LIMIT_MB = 20480-(1024*1)              # Memory limit in MB
 Run the script with:
 
 ```bash
-python ptero-memcheck.py
+python main.py
 ```
 
 The script will:
