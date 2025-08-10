@@ -49,7 +49,7 @@ RAM_LIMIT_MB = 20480-(1024*1)              # Speicherlimit in MB
 Starte das Skript einfach mit:
 
 ```bash
-python ptero-memcheck.py
+python main.py
 ```
 
 Das Skript:
