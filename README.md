@@ -61,7 +61,7 @@ The script will:
 
 ## 🛠 Customization
 
-- **Check interval**: Change the `time.sleep(300)` value in seconds (`300 = 5 minutes`) as needed
+- **Check interval**: Change the `time.sleep(60*5)` value in seconds (`60*5 = 5 minutes`) as needed
 - **RAM limit**: Adjust the `RAM_LIMIT_MB` value in the script
 
 
