@@ -1,5 +1,6 @@
 import requests
 import time
+from datetime import datetime
 
 PANEL_URL = "https://dein-panel.com"          # Panel-URL anpassen!
 API_KEY = "DEIN_API_KEY"                      # API Key eintragen!
@@ -25,23 +26,23 @@ def execute_scheduler():
     url = f"{PANEL_URL}/api/client/servers/{SERVER_ID}/schedules/{SCHEDULE_ID}/execute"
     resp = requests.post(url, headers=HEADERS)
     if resp.status_code in (202, 204):
-        print("Scheduler wurde erfolgreich ausgelöst.")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Scheduler wurde erfolgreich ausgelöst.")
     else:
-        print(f"Fehler beim Ausführen des Schedulers: Status {resp.status_code}, Antwort: {resp.text}")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Fehler beim Ausführen des Schedulers: Status {resp.status_code}, Antwort: {resp.text}")
 
 def main():
     while True:
         try:
             ram_usage = get_server_resources()
-            print(f"RAM Nutzung: {ram_usage}MB von {RAM_LIMIT_MB}MB")
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] RAM Nutzung: {ram_usage}MB von {RAM_LIMIT_MB}MB")
             if ram_usage >= RAM_LIMIT_MB:
-                print("RAM Limit erreicht! Scheduler wird ausgeführt...")
+                print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] RAM Limit erreicht! Scheduler wird ausgeführt...")
                 execute_scheduler()
                 break  # Bei Bedarf hier weiter laufen lassen oder abbrechen
         except Exception as e:
-            print("Fehler:", e)
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Fehler:", e)
         # Intervall für die Prüfung, z.B. alle 5 Minuten
-        time.sleep(300)
+        time.sleep(60*15)
 
 if __name__ == "__main__":
     main()
